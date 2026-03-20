@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Galería SVG</title>
+  <style>
+    body { font-family: Arial; text-align: center; background:#f5f5f5; }
+    .galeria { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; padding: 20px; }
+    img { width: 100%; background: white; padding: 10px; border-radius: 10px; }
+  </style>
+</head>
+<body>
+
+<h1>Mi galería SVG</h1>
+<div class="galeria" id="galeria"></div>
+
+<script>
+// Lista automática: GitHub Pages no puede leer la carpeta, así que listás tus SVG aquí
+const archivos = [
+  "A4 - 1.svg",
+  "astronauta-gewup.svg",
+  "certificado.svg"
+  // podés pegar todos los nombres de tus SVG
+];
+
+const contenedor = document.getElementById("galeria");
+archivos.forEach(nombre => {
+  const img = document.createElement("img");
+  img.src = "svg/" + nombre;
+  contenedor.appendChild(img);
+});
+</script>
+
+</body>
+</html>
